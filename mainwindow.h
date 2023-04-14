@@ -14,9 +14,12 @@ QT_END_NAMESPACE
 class MainWindow : public QMainWindow
 {
   Q_OBJECT
- public:
+public:
   explicit MainWindow(QWidget *parent = nullptr);
   ~MainWindow();
+
+private slots:
+  void onPush();
 
 private:
 
@@ -29,6 +32,10 @@ private:
   QVBoxLayout *rootLayout;
 
   QPushButton *quitButton;
+  QPushButton *pushButton;
+
+  QScrollArea *scrollArea; 
+  QTextEdit *textArea; 
 };
 
 #endif // MAINWINDOW_H
