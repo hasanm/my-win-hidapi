@@ -12,6 +12,10 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+
+set(BUILD_SHARED_LIBS FALSE)
+add_subdirectory(hidapi)
+
 add_executable( ${CMAKE_PROJECT_NAME}
                 main.cpp
                 mainwindow.cpp)
@@ -20,4 +24,4 @@ add_executable( ${CMAKE_PROJECT_NAME}
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
                            "${PROJECT_BINARY_DIR}")
 
-target_link_libraries(${CMAKE_PROJECT_NAME} Qt6::Core Qt6::Widgets Qt6::Gui)
+target_link_libraries(${CMAKE_PROJECT_NAME} Qt6::Core Qt6::Widgets Qt6::Gui hidapi::hidapi)
